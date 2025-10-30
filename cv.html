@@ -29,7 +29,6 @@
             print-color-adjust: exact;
         }
 
-
         .download-btn {
             position: fixed;
             top: 20px;
@@ -69,33 +68,60 @@
         }
 
         .header {
-            text-align: center;
-            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 18px;
             padding-bottom: 18px;
             border-bottom: 2px solid #e5e7eb;
         }
 
-        .name {
+        .profile-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid #e5e7eb;
+            flex-shrink: 0;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+
+        .header-content h4 {
+            margin-bottom: 8px;
+        }
+
+        .header-content h1 {
             font-size: 32px;
             font-weight: 700;
             color: #111827;
-            margin-bottom: 10px;
+            margin-bottom: -8px;
+            letter-spacing: -0.5px;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
             letter-spacing: -0.5px;
         }
 
         .contact-info {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 6px 18px;
-            font-size: 13px;
+            gap: 5px 15px;
+            font-size: 12px;
             color: #4b5563;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .contact-item a {
@@ -108,35 +134,42 @@
         }
 
         .section {
-            margin-bottom: 22px;
+            margin-bottom: 18px;
         }
 
         .section-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: #111827;
-            margin-bottom: 10px;
-            padding-bottom: 6px;
+            margin-bottom: 8px;
+            padding-bottom: 5px;
             border-bottom: 2px solid #111827;
             text-transform: capitalize;
+        }
+
+        .about-text {
+            font-size: 12px;
+            color: #4b5563;
+            line-height: 1.6;
+            text-align: justify;
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            font-size: 13px;
+            gap: 6px;
+            font-size: 12px;
         }
 
         .skill-category {
             display: flex;
-            gap: 8px;
+            gap: 6px;
         }
 
         .skill-label {
             font-weight: 600;
             color: #111827;
-            min-width: 90px;
+            min-width: 85px;
         }
 
         .skill-items {
@@ -144,7 +177,7 @@
         }
 
         .experience-item {
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }
 
         .experience-header {
@@ -157,42 +190,42 @@
         }
 
         .job-title {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             color: #111827;
         }
 
         .date {
-            font-size: 12px;
+            font-size: 11px;
             color: #6b7280;
             font-style: italic;
         }
 
         .company {
-            font-size: 13px;
+            font-size: 12px;
             color: #4b5563;
             font-style: italic;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .description-list {
             list-style: disc;
-            padding-left: 20px;
-            font-size: 13px;
+            padding-left: 18px;
+            font-size: 12px;
             color: #4b5563;
         }
 
         .description-list li {
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .project-item {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .project-title-line {
-            font-size: 14px;
-            margin-bottom: 4px;
+            font-size: 13px;
+            margin-bottom: 3px;
         }
 
         .project-name {
@@ -206,13 +239,13 @@
         }
 
         .project-description {
-            font-size: 13px;
+            font-size: 12px;
             color: #4b5563;
             line-height: 1.5;
         }
 
         .education-item {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .education-header {
@@ -224,45 +257,38 @@
         }
 
         .degree {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             color: #111827;
         }
 
         .institution {
-            font-size: 13px;
+            font-size: 12px;
             color: #4b5563;
-        }
-
-        .awards-list {
-            list-style: disc;
-            padding-left: 20px;
-            font-size: 13px;
-            color: #4b5563;
-        }
-
-        .awards-list li {
-            margin-bottom: 5px;
-        }
-
-        .award-title {
-            font-weight: 600;
-            color: #111827;
         }
 
         @media (max-width: 768px) {
             .resume {
-                padding: 40px 30px;
+                padding: 30px 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .profile-photo {
+                width: 90px;
+                height: 90px;
             }
 
             .name {
-                font-size: 28px;
+                font-size: 24px;
             }
 
             .contact-info {
-                /* flex-direction: column; */
-                align-items: center;
-                gap: 6px;
+                gap: 4px;
             }
 
             .skills-grid {
@@ -279,56 +305,139 @@
         @media print {
             @page {
                 size: A4;
-                margin: 10mm 15mm;
+                margin: 12mm 15mm;
             }
 
             body {
-                background: #fff;
+                background: #fff !important;
                 padding: 0;
                 margin: 0;
             }
 
             .resume {
-                display: flex;
-                flex-direction: column;
                 box-shadow: none;
-                padding: 0;
+                padding: 0 !important;
                 max-width: 100%;
                 margin: 0;
-                font-size: 11px;
-            }
-
-            .contact-info,
-            .skills-grid,
-            .description-list,
-            .project-description,
-            .awards-list {
-                font-size: 10px;
-            }
-
-            .job-title,
-            .degree {
-                font-size: 12px;
             }
 
             .download-btn {
-                display: none;
-            }
-
-            .section {
-                margin-bottom: 12px;
-                page-break-inside: avoid;
+                display: none !important;
             }
 
             .header {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                gap: 15px !important;
                 margin-bottom: 12px;
-                padding-bottom: 10px;
+                padding-bottom: 12px;
+                border-bottom: 2px solid #e5e7eb;
+            }
+
+            .profile-photo {
+                width: 85px !important;
+                height: 85px !important;
+                border-radius: 8px !important;
+                object-fit: cover;
+                border: 3px solid #e5e7eb !important;
+                flex-shrink: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .header-content {
+                flex: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+            }
+
+            .header-content h4 {
+                margin-bottom: 8px !important;
+            }
+
+            .header-content h1 {
+                font-size: 32px !important;
+                font-weight: 700 !important;
+                color: #111827 !important;
+                margin-bottom: -8px !important;
+                letter-spacing: -0.5px !important;
+            }
+
+            .name {
+                font-size: 20px !important;
+                margin-bottom: 8px !important;
+                font-weight: 700 !important;
+                color: #111827 !important;
+                letter-spacing: -0.5px;
+            }
+
+            .contact-info {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px 15px;
+                font-size: 12px;
+                color: #4b5563;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .contact-item a {
+                color: #2563eb;
+                text-decoration: none;
+            }
+
+            .contact-item a:hover {
+                text-decoration: underline;
+            }
+
+            .section {
+                margin-bottom: 10px;
+                page-break-inside: avoid;
             }
 
             .section-title {
-                margin-bottom: 6px;
-                padding-bottom: 4px;
-                border-bottom: 1px solid #111827;
+                font-size: 13px;
+                margin-bottom: 5px;
+                padding-bottom: 3px;
+                font-weight: 700;
+                color: #111827;
+                border-bottom: 2px solid #111827;
+                text-transform: capitalize;
+            }
+
+            .about-text {
+                font-size: 10px;
+                line-height: 1.6;
+                color: #4b5563;
+                text-align: justify;
+            }
+
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
+                font-size: 10px;
+            }
+
+            .skill-category {
+                display: flex;
+                gap: 4px;
+            }
+
+            .skill-label {
+                min-width: 70px;
+                font-weight: 600;
+                color: #111827;
+            }
+
+            .skill-items {
+                color: #4b5563;
             }
 
             .experience-item,
@@ -338,33 +447,67 @@
                 page-break-inside: avoid;
             }
 
+            .experience-header,
+            .education-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 3px;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .job-title,
+            .degree {
+                font-size: 11px;
+                font-weight: 600;
+                color: #111827;
+            }
+
+            .date {
+                font-size: 9px;
+                color: #6b7280;
+                font-style: italic;
+            }
+
+            .company,
+            .institution {
+                font-size: 9px;
+                color: #4b5563;
+                font-style: italic;
+                margin-bottom: 5px;
+            }
+
             .description-list {
+                list-style: disc;
                 padding-left: 15px;
+                font-size: 9px;
+                color: #4b5563;
             }
 
             .description-list li {
                 margin-bottom: 2px;
             }
 
-
-            .contact-info {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 4px 10px;
+            .project-title-line {
                 font-size: 10px;
+                margin-bottom: 3px;
             }
 
-            .skills-grid {
-                gap: 4px;
+            .project-name {
+                font-weight: 600;
+                color: #111827;
             }
 
-            .skill-category {
-                gap: 4px;
+            .project-tech {
+                color: #6b7280;
+                font-style: italic;
             }
 
-            .skill-label {
-                min-width: 70px;
+            .project-description {
+                font-size: 9px;
+                color: #4b5563;
+                line-height: 1.5;
             }
         }
     </style>
@@ -377,24 +520,68 @@
 
     <div class="resume">
         <header class="header">
-            <h1 class="name">Jaroof Deen Shifkan</h1>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i> <a href="tel:+94755638086">+94 75 563 8086</a>
+            <img src="cv.png" alt="Profile Photo" class="profile-photo">
+            <div class="header-content">
+                <h1 class="name">Jaroof Deen Shifkan</h1>
+                <h4>Full Stack Web Developer</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i> <a href="tel:+94755638086">+94 75 563 8086</a>
+                    </div>
+                    <div class="contact-item">
+                        | <i class="fa-solid fa-envelope"></i> <a
+                            href="mailto:shifkanm04@gmail.com">shifkanm04@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        | <i class="fa-brands fa-github"></i> <a href="https://github.com/shifkan04"
+                            target="_blank">github.com/shifkan04</a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    | <i class="fa-solid fa-envelope"></i> <a href="mailto:shifkanm04@gmail.com">shifkanm04@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    | <i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/shifkan04" target="_blank">github.com/shifkan04</a>
-                </div>
-                <!-- <div class="contact-item">
-                    | 💼 LinkedIn: <a href="https://linkedin.com/in/shifkan" target="_blank">Shifkan</a>
-                </div> -->
             </div>
         </header>
 
-       
+        <section class="section">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                Passionate Full Stack Web Developer with expertise in Laravel, PHP, and modern JavaScript frameworks.
+                Specialized in building scalable, user-focused web applications with clean architecture and intuitive
+                interfaces.
+                Proven track record in developing complete CRUD systems, implementing real-time features using AJAX, and
+                creating
+                responsive designs. Committed to writing clean, maintainable code and delivering solutions that solve
+                real-world
+                problems efficiently.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-label">Frontend:</div>
+                    <div class="skill-items">HTML5, CSS3, JavaScript, Tailwind, Bulma, Bootstrap</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Backend:</div>
+                    <div class="skill-items">PHP, Laravel, REST API</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Database:</div>
+                    <div class="skill-items">MySQL (Advanced), MongoDB</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Tools:</div>
+                    <div class="skill-items">Git, GitHub, Composer, VS Code, Postman, Laragon, xampp, MySQL Workbench, phpMyAdmin</div>
+                </div>
+            </div>
+            <div class="skills-grid" style="margin-top: 8px;">
+                <div class="skill-category">
+                    <div class="skill-label">Soft Skills:</div>
+                    <div class="skill-items">Problem-Solving, Team Collaboration, Communication, Time Management,
+                        Adaptability</div>
+                </div>
+            </div>
+        </section>
 
         <section class="section">
             <h2 class="section-title">Work Experience</h2>
@@ -412,7 +599,6 @@
                     </li>
                     <li>Collaborated on live projects to debug and enhance frontend performance, ensuring a smooth user
                         experience.</li>
-                    <li>Received Certificate of Achievement for excellent performance and teamwork.</li>
                 </ul>
             </div>
 
@@ -440,7 +626,7 @@
                 </div>
                 <div class="project-description">
                     A full-stack waste collection tracking system with JWT authentication and full CRUD functionality.
-                    Developed using Laravel and MySQL, with separate dashboards for admin and collectors, users.
+                    Developed using Laravel and MySQL, with separate dashboards for admin, collectors, and users.
                 </div>
             </div>
 
@@ -451,45 +637,21 @@
                 </div>
                 <div class="project-description">
                     A comprehensive student information system with dynamic attendance tracking using AJAX for real-time
-                    updates. Features include grade management, reporting, and a responsive UI optimized for handling
-                    large datasets.
+                    updates. Features include grade management, reporting, and responsive UI optimized for large
+                    datasets.
                 </div>
             </div>
 
             <div class="project-item">
                 <div class="project-title-line">
                     <span class="project-name">E-Commerce Website</span> – <span class="project-tech">PHP, AJAX,
-                        JavaScript,
-                        Bootstrap</span>
+                        JavaScript, Bootstrap</span>
                 </div>
                 <div class="project-description">
-                    An immersive online shopping experience built with modern frontend animations, complete product
-                    catalog management, shopping cart, and admin dashboard. Features real-time product visualization and
-                    smooth animations.
+                    An online shopping platform with modern animations, product catalog management, shopping cart, and
+                    admin dashboard. Features real-time product visualization and smooth user interactions.
                 </div>
             </div>
-
-            <!-- <div class="project-item">
-                <div class="project-title-line">
-                    <span class="project-name">Text Manipulation Tool</span> – <span class="project-tech">JavaScript,
-                        HTML, CSS</span>
-                </div>
-                <div class="project-description">
-                    A fast and efficient text utility app that allows users to format, clean, and analyze text using
-                    features like uppercase/lowercase conversion and extra space removal.
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-title-line">
-                    <span class="project-name">News Platform (Real-Time)</span> – <span class="project-tech">JavaScript,
-                        REST API, Bootstrap</span>
-                </div>
-                <div class="project-description">
-                    A responsive news platform that fetches live articles from an API and categorizes them into sections
-                    like Business, Sports, and Technology. Developed with JavaScript and Bootstrap.
-                </div>
-            </div> -->
         </section>
 
         <section class="section">
@@ -509,7 +671,7 @@
                 <div class="education-header">
                     <div>
                         <div class="degree">Diploma in Computer Science</div>
-                        <div class="institution">Refresh metro campus (Sarvodaya fusion)</div>
+                        <div class="institution">Refresh Metro Campus (Sarvodaya Fusion)</div>
                     </div>
                     <div class="date">Completed - 2022</div>
                 </div>
@@ -519,66 +681,20 @@
                 <div class="education-header">
                     <div>
                         <div class="degree">GCE Ordinary Level</div>
-                        <div class="institution">(A,B,3C,3S)</div>
+                        <div class="institution">(A, B, 3C, 3S)</div>
                     </div>
                     <div class="date">Completed: 2021</div>
                 </div>
             </div>
         </section>
-
-         <section class="section">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-label">Frontend:</div>
-                    <div class="skill-items">HTML5, CSS3, JavaScript, Tailwind CSS, Bulma, Bootstrap</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-label">Backend:</div>
-                    <div class="skill-items">PHP, Laravel, REST API</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-label">Database:</div>
-                    <div class="skill-items">MySQL (Advanced), MongoDB</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-label">Tools & Platforms:</div>
-                    <div class="skill-items">Git, GitHub, Composer, VS Code, Postman, Laragon, phpmyadmin</div>
-                </div>
-            </div>
-            <div style="margin-top: 10px;">
-                <div class="skill-category">
-                    <div class="skill-label">Soft Skills:</div>
-                    <div class="skill-items">Problem-Solving, Team Collaboration, Communication, Time Management,
-                        Adaptability</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Awards and Certificates</h2>
-            <ul class="awards-list">
-                <li><span class="award-title">HND in Computer Science Certificate</span> – VITS Campus (UK Recognized) (2022-2024)</li>
-                <li><span class="award-title">Virtual Internship in Web Development</span> – VITS Campus (2025)</li>
-                <li><span class="award-title">Full Stack Web Development Certificate</span> – Online Course (2024)</li>
-                <!-- <li><span class="award-title">PHP & Laravel Certificate</span> – [Platform Name] (2024)</li> -->
-            </ul> 
-        </section>
     </div>
 
     <script>
         function downloadPDF() {
-            // Store the button
             const btn = document.querySelector('.download-btn');
             const originalDisplay = btn.style.display;
-
-            // Hide button for PDF
             btn.style.display = 'none';
-
-            // Use browser's print dialog which can save as PDF
             window.print();
-
-            // Restore button after print dialog closes
             setTimeout(() => {
                 btn.style.display = originalDisplay;
             }, 100);
