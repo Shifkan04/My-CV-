@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shifkan - Full Stack Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f9fafb;
+            padding: 40px 20px;
+            color: #1f2937;
+            line-height: 1.5;
+        }
+
+        body,
+        .resume {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .resume {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 45px 55px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 18px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px 18px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 22px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #111827;
+            text-transform: capitalize;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .skill-category {
+            display: flex;
+            gap: 8px;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: #111827;
+            min-width: 90px;
+        }
+
+        .skill-items {
+            color: #4b5563;
+        }
+
+        .experience-item {
+            margin-bottom: 18px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .job-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .company {
+            font-size: 13px;
+            color: #4b5563;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .description-list {
+            list-style: disc;
+            padding-left: 20px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .description-list li {
+            margin-bottom: 4px;
+        }
+
+        .project-item {
+            margin-bottom: 14px;
+        }
+
+        .project-title-line {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .project-name {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .project-tech {
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .project-description {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        .education-item {
+            margin-bottom: 14px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .degree {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .institution {
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .awards-list {
+            list-style: disc;
+            padding-left: 20px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .awards-list li {
+            margin-bottom: 5px;
+        }
+
+        .award-title {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        @media (max-width: 768px) {
+            .resume {
+                padding: 40px 30px;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+
+            .contact-info {
+                /* flex-direction: column; */
+                align-items: center;
+                gap: 6px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header,
+            .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm 15mm;
+            }
+
+            body {
+                background: #fff;
+                padding: 0;
+                margin: 0;
+            }
+
+            .resume {
+                display: flex;
+                flex-direction: column;
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+                margin: 0;
+                font-size: 11px;
+            }
+
+            .contact-info,
+            .skills-grid,
+            .description-list,
+            .project-description,
+            .awards-list {
+                font-size: 10px;
+            }
+
+            .job-title,
+            .degree {
+                font-size: 12px;
+            }
+
+            .download-btn {
+                display: none;
+            }
+
+            .section {
+                margin-bottom: 12px;
+                page-break-inside: avoid;
+            }
+
+            .header {
+                margin-bottom: 12px;
+                padding-bottom: 10px;
+            }
+
+            .section-title {
+                margin-bottom: 6px;
+                padding-bottom: 4px;
+                border-bottom: 1px solid #111827;
+            }
+
+            .experience-item,
+            .project-item,
+            .education-item {
+                margin-bottom: 8px;
+                page-break-inside: avoid;
+            }
+
+            .description-list {
+                padding-left: 15px;
+            }
+
+            .description-list li {
+                margin-bottom: 2px;
+            }
+
+
+            .contact-info {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 4px 10px;
+                font-size: 10px;
+            }
+
+            .skills-grid {
+                gap: 4px;
+            }
+
+            .skill-category {
+                gap: 4px;
+            }
+
+            .skill-label {
+                min-width: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="download-btn" onclick="downloadPDF()">
+        📄 Download PDF
+    </button>
+
+    <div class="resume">
+        <header class="header">
+            <h1 class="name">Jaroof Deen Shifkan</h1>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📞 <a href="tel:+94755638086">+94 75 563 8086</a>
+                </div>
+                <div class="contact-item">
+                    | 📧 <a href="mailto:shifkanm04@gmail.com">shifkanm04@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    | 🔗 GitHub: <a href="https://github.com/shifkan04" target="_blank">github.com/shifkan04</a>
+                </div>
+                <!-- <div class="contact-item">
+                    | 💼 LinkedIn: <a href="https://linkedin.com/in/shifkan" target="_blank">Shifkan</a>
+                </div> -->
+            </div>
+        </header>
+
+       
+
+        <section class="section">
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="job-title">Web Developer (Virtual Internship)</div>
+                    <div class="date">May 2025 – Oct 2025</div>
+                </div>
+                <div class="company">VITS Campus</div>
+                <ul class="description-list">
+                    <li>Developed responsive web applications using Laravel, PHP, HTML, CSS, and Bootstrap, enhancing
+                        user engagement.</li>
+                    <li>Built and optimized RESTful APIs with Laravel and MySQL, improving performance and efficiency.
+                    </li>
+                    <li>Collaborated on live projects to debug and enhance frontend performance, ensuring a smooth user
+                        experience.</li>
+                    <li>Received Certificate of Achievement for excellent performance and teamwork.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="job-title">Freelance Full Stack Developer</div>
+                    <div class="date">2025 – Present</div>
+                </div>
+                <div class="company">Self-Employed</div>
+                <ul class="description-list">
+                    <li>Designed and deployed full-stack web apps using Laravel, PHP, JavaScript, and MySQL.</li>
+                    <li>Integrated secure authentication and data handling to ensure smooth functionality.</li>
+                    <li>Created custom solutions and delivered projects on time with 100% client satisfaction.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="project-item">
+                <div class="project-title-line">
+                    <span class="project-name">Waste Garbage Collection System</span> – <span
+                        class="project-tech">Laravel, MySQL, Bulma</span>
+                </div>
+                <div class="project-description">
+                    A full-stack waste collection tracking system with JWT authentication and full CRUD functionality.
+                    Developed using Laravel and MySQL, with separate dashboards for admin and collectors, users.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title-line">
+                    <span class="project-name">Student Management System</span> – <span class="project-tech">Laravel,
+                        AJAX, MySQL</span>
+                </div>
+                <div class="project-description">
+                    A comprehensive student information system with dynamic attendance tracking using AJAX for real-time
+                    updates. Features include grade management, reporting, and a responsive UI optimized for handling
+                    large datasets.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title-line">
+                    <span class="project-name">E-Commerce Website</span> – <span class="project-tech">PHP, AJAX,
+                        JavaScript,
+                        Bootstrap</span>
+                </div>
+                <div class="project-description">
+                    An immersive online shopping experience built with modern frontend animations, complete product
+                    catalog management, shopping cart, and admin dashboard. Features real-time product visualization and
+                    smooth animations.
+                </div>
+            </div>
+
+            <!-- <div class="project-item">
+                <div class="project-title-line">
+                    <span class="project-name">Text Manipulation Tool</span> – <span class="project-tech">JavaScript,
+                        HTML, CSS</span>
+                </div>
+                <div class="project-description">
+                    A fast and efficient text utility app that allows users to format, clean, and analyze text using
+                    features like uppercase/lowercase conversion and extra space removal.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title-line">
+                    <span class="project-name">News Platform (Real-Time)</span> – <span class="project-tech">JavaScript,
+                        REST API, Bootstrap</span>
+                </div>
+                <div class="project-description">
+                    A responsive news platform that fetches live articles from an API and categorizes them into sections
+                    like Business, Sports, and Technology. Developed with JavaScript and Bootstrap.
+                </div>
+            </div> -->
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="degree">HND in Computer Science</div>
+                        <div class="institution">VITS Campus (UK Recognized), Puttalam</div>
+                    </div>
+                    <div class="date">Completed - 2024</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="degree">Diploma in Computer Science</div>
+                        <div class="institution">Refresh metro campus (Sarvodaya fusion)</div>
+                    </div>
+                    <div class="date">Completed - 2022</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="degree">GCE Ordinary Level</div>
+                        <div class="institution">(A,B,3C,3S)</div>
+                    </div>
+                    <div class="date">Completed: 2021</div>
+                </div>
+            </div>
+        </section>
+
+         <section class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-label">Frontend:</div>
+                    <div class="skill-items">HTML5, CSS3, JavaScript, Tailwind CSS, Bulma, Bootstrap</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Backend:</div>
+                    <div class="skill-items">PHP, Laravel, REST API</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Database:</div>
+                    <div class="skill-items">MySQL (Advanced), MongoDB</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Tools & Platforms:</div>
+                    <div class="skill-items">Git, GitHub, Composer, VS Code, Postman, Laragon, phpmyadmin</div>
+                </div>
+            </div>
+            <div style="margin-top: 10px;">
+                <div class="skill-category">
+                    <div class="skill-label">Soft Skills:</div>
+                    <div class="skill-items">Problem-Solving, Team Collaboration, Communication, Time Management,
+                        Adaptability</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="section">
+            <h2 class="section-title">Awards and Certificates</h2>
+            <ul class="awards-list">
+                <li><span class="award-title">Web Development Certificate</span> – [Institute Name] (2024)</li>
+                <li><span class="award-title">Virtual Internship in Web Development</span> – [Company Name] (2025)</li>
+                <li><span class="award-title">Full Stack Web Development Certificate</span> – Online Course (2024)</li>
+                <li><span class="award-title">PHP & Laravel Certificate</span> – [Platform Name] (2024)</li>
+            </ul>
+        </section> -->
+    </div>
+
+    <script>
+        function downloadPDF() {
+            // Store the button
+            const btn = document.querySelector('.download-btn');
+            const originalDisplay = btn.style.display;
+
+            // Hide button for PDF
+            btn.style.display = 'none';
+
+            // Use browser's print dialog which can save as PDF
+            window.print();
+
+            // Restore button after print dialog closes
+            setTimeout(() => {
+                btn.style.display = originalDisplay;
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>
