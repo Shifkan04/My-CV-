@@ -99,7 +99,7 @@
     justify-content: center; /* center contact items */
     flex-wrap: wrap;
     gap: 5px 15px;
-    font-size: 12px;
+    font-size: 11px;
     color: #4b5563;
 }
 
@@ -312,65 +312,65 @@
             }
 
             .header {
-    display: flex;
-    flex-direction: column; /* stack items vertically */
-    align-items: center;    /* center horizontally */
-    text-align: center;     /* center text inside */
-    gap: 15px;
-    margin-bottom: 18px;
-    padding-bottom: 18px;
-    border-bottom: 2px solid #e5e7eb;
-}
+                display: flex;
+                flex-direction: column; /* stack items vertically */
+                align-items: center;    /* center horizontally */
+                text-align: center;     /* center text inside */
+                gap: 15px;
+                margin-bottom: 5px;
+                padding-bottom: 5px;
+                border-bottom: 2px solid #e5e7eb;
+            }
 
-.header-content {
-    flex: 1;
-}
+            .header-content {
+                flex: 1;
+            }
 
-.header-content h1 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: -8px;
-    letter-spacing: -0.5px;
-}
+            .header-content h1 {
+                font-size: 30px;
+                font-weight: 650;
+                color: #111827;
+                margin-bottom: -8px;
+                letter-spacing: -0.5px;
+            }
 
-.header-content h4 {
-    margin-bottom: 8px;
-}
+            .header-content h4 {
+                margin-bottom: 8px;
+            }
 
-.contact-info {
-    display: flex;
-    justify-content: center; /* center contact items */
-    flex-wrap: wrap;
-    gap: 5px 15px;
-    font-size: 12px;
-    color: #4b5563;
-}
+            .contact-info {
+                display: flex;
+                justify-content: center; /* center contact items */
+                flex-wrap: wrap;
+                gap: 4px 4px;
+                font-size: 11px;
+                color: #4b5563;
+            }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
 
-.contact-item a {
-    color: #2563eb;
-    text-decoration: none;
-}
+            .contact-item a {
+                color: #2563eb;
+                text-decoration: none;
+            }
 
-.contact-item a:hover {
-    text-decoration: underline;
-}
+            .contact-item a:hover {
+                text-decoration: underline;
+            }
 
 
             .section {
-                margin-bottom: 10px;
+                margin-bottom: 3px;
                 page-break-inside: avoid;
             }
 
             .section-title {
                 font-size: 13px;
-                margin-bottom: 5px;
+                margin-bottom: 3px;
                 padding-bottom: 3px;
                 font-weight: 700;
                 color: #111827;
@@ -379,7 +379,7 @@
             }
 
             .about-text {
-                font-size: 10px;
+                font-size: 12px;
                 line-height: 1.6;
                 color: #4b5563;
                 text-align: justify;
@@ -388,23 +388,25 @@
             .skills-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 4px;
+                gap: 2px;
                 font-size: 10px;
             }
 
             .skill-category {
                 display: flex;
-                gap: 4px;
+                gap: 2px;
             }
 
             .skill-label {
                 min-width: 70px;
+                font-size: 12px;
                 font-weight: 600;
                 color: #111827;
             }
 
             .skill-items {
                 color: #4b5563;
+                font-size: 11px;
             }
 
             .experience-item,
@@ -416,30 +418,31 @@
 
             .experience-header,
             .education-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: baseline;
-                margin-bottom: 3px;
-                flex-wrap: wrap;
-                gap: 8px;
+                display: flex !important;
+                flex-direction: row !important; 
+                justify-content: space-between !important; 
+                align-items: flex-start !important;
+                width: 100%;
             }
 
             .job-title,
             .degree {
-                font-size: 11px;
+                font-size: 12px;
                 font-weight: 600;
                 color: #111827;
             }
 
             .date {
-                font-size: 9px;
+                font-size: 12px;
                 color: #6b7280;
                 font-style: italic;
+                text-align: right !important;
+                white-space: nowrap;
             }
 
             .company,
             .institution {
-                font-size: 9px;
+                font-size: 12px;
                 color: #4b5563;
                 font-style: italic;
                 margin-bottom: 5px;
@@ -448,16 +451,16 @@
             .description-list {
                 list-style: disc;
                 padding-left: 15px;
-                font-size: 9px;
+                font-size: 12px;
                 color: #4b5563;
             }
 
             .description-list li {
-                margin-bottom: 2px;
+                margin-bottom: 1px;
             }
 
             .project-title-line {
-                font-size: 10px;
+                font-size: 12px;
                 margin-bottom: 3px;
             }
 
@@ -472,7 +475,7 @@
             }
 
             .project-description {
-                font-size: 9px;
+                font-size: 12px;
                 color: #4b5563;
                 line-height: 1.5;
             }
@@ -492,7 +495,10 @@
                 <h4>Full Stack Web Developer</h4>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fa-solid fa-phone"></i> <a href="tel:+94755638086">+94 75 563 8086</a>
+                        <i class="fa-solid fa-location-dot"></i> Puttalam, Sri Lanka
+                    </div>
+                    <div class="contact-item">
+                        |<i class="fa-solid fa-phone"></i> <a href="tel:+94755638086">+94 75 563 8086</a>
                     </div>
                     <div class="contact-item">
                         | <i class="fa-solid fa-envelope"></i> <a
@@ -502,6 +508,9 @@
                         | <i class="fa-brands fa-github"></i> <a href="https://github.com/shifkan04"
                             target="_blank">github.com/shifkan04</a>
                     </div>
+                    <div class="contact-item">
+                        | <i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/shifkan/" target="_blank">linkedin.com/in/shifkan</a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -509,7 +518,7 @@
         <section class="section">
             <h2 class="section-title">About Me</h2>
             <p class="about-text">
-                Passionate Full Stack Web Developer with expertise in Laravel, PHP, and modern JavaScript frameworks.
+                Passionate Full Stack Web Developer with expertise in Laravel, PHP, Next.js and modern JavaScript frameworks.
                 Specialized in building scalable, user-focused web applications with clean architecture and intuitive
                 interfaces.
                 Proven track record in developing complete CRUD systems, implementing real-time features using AJAX, and
@@ -525,11 +534,11 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="skill-label">Frontend:</div>
-                    <div class="skill-items">HTML5, CSS3, JavaScript, Tailwind, Bulma, Bootstrap</div>
+                    <div class="skill-items">React, HTML5, CSS3, JavaScript, Tailwind, Bulma, Bootstrap</div>
                 </div>
                 <div class="skill-category">
-                    <div class="skill-label">Backend:</div>
-                    <div class="skill-items">PHP, Laravel, REST API</div>
+                    <div class="skill-label">Backend / Full-Stack:</div>
+                    <div class="skill-items">Next.js (API Routes), Laravel, PHP, REST API, CodeIgniter</div>
                 </div>
                 <div class="skill-category">
                     <div class="skill-label">Database:</div>
@@ -540,7 +549,7 @@
                     <div class="skill-items">Git, GitHub, Composer, VS Code, Postman, Laragon, xampp, MySQL Workbench, phpMyAdmin</div>
                 </div>
             </div>
-            <div class="skills-grid" style="margin-top: 8px;">
+            <div class="skills-grid">
                 <div class="skill-category">
                     <div class="skill-label">Soft Skills:</div>
                     <div class="skill-items">Problem-Solving, Team Collaboration, Communication, Time Management,
@@ -554,12 +563,12 @@
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <div class="job-title">Web Developer (Virtual Internship)</div>
-                    <div class="date">May 2025 – Oct 2025</div>
+                    <div class="job-title">Web Developer</div>
+                    <div class="date">May 2025 – Nov 2025</div>
                 </div>
                 <div class="company">VITS Campus</div>
                 <ul class="description-list">
-                    <li>Developed responsive web applications using Laravel, PHP, HTML, CSS, and Bootstrap, enhancing
+                    <li>Developed responsive web applications using Next.js, Laravel, PHP, HTML, CSS, and Bootstrap, enhancing
                         user engagement.</li>
                     <li>Built and optimized RESTful APIs with Laravel and MySQL, improving performance and efficiency.
                     </li>
@@ -571,11 +580,11 @@
             <div class="experience-item">
                 <div class="experience-header">
                     <div class="job-title">Freelance Full Stack Developer</div>
-                    <div class="date">2025 – Present</div>
+                    <div class="date">2026 – Present</div>
                 </div>
                 <div class="company">Self-Employed</div>
                 <ul class="description-list">
-                    <li>Designed and deployed full-stack web apps using Laravel, PHP, JavaScript, and MySQL.</li>
+                    <li>Designed and deployed full-stack web apps using Next.js, Laravel, Codeigniter, PHP, JavaScript, and MySQL.</li>
                     <li>Integrated secure authentication and data handling to ensure smooth functionality.</li>
                     <li>Created custom solutions and delivered projects on time with 100% client satisfaction.</li>
                 </ul>
@@ -585,7 +594,23 @@
         <section class="section">
             <h2 class="section-title">Projects</h2>
 
-            <div class="project-item">
+           <div class="project-item">
+                <div class="project-title-line">
+                    <span class="project-name">
+                        <a href="https://khetkart.com" target="_blank" style="text-decoration: none; color: inherit;">
+                            <strong>Khetkart (E-Commerce Platform)</strong> 🔗
+                        </a>
+                    </span> – 
+                    <span class="project-tech">Laravel, AJAX, MySQL, Git</span>
+                </div>
+                <div class="project-description">
+                    Collaborated within a team to develop this e-commerce platform, specifically focusing on the <strong>checkout module and dynamic GST tax calculations</strong> using AJAX. Managed version control via <strong>Git</strong> for seamless code integration and optimized backend queries for faster performance.
+                    <br>
+                    <strong>Live:</strong> <a href="https://khetkart.com" target="_blank">khetkart.com</a>
+                </div>
+            </div>
+
+            <!-- <div class="project-item">
                 <div class="project-title-line">
                     <span class="project-name">Waste Garbage Collection System</span> – <span
                         class="project-tech">Laravel, MySQL, Bulma</span>
@@ -594,28 +619,26 @@
                     A full-stack waste collection tracking system with JWT authentication and full CRUD functionality.
                     Developed using Laravel and MySQL, with separate dashboards for admin, collectors, and users.
                 </div>
+            </div> -->
+
+           <div class="project-item">
+                <div class="project-title-line">
+                    <span class="project-name">Enterprise Resource Planning (ERP) System</span> – <span class="project-tech">Codeigniter, MySQL, AJAX, jQuery</span>
+                </div>
+                <div class="project-description">
+                    Collaborated in a team to develop a scalable ERP solution. <strong>Solely responsible for end-to-end development of three critical modules:</strong> 
+                    1. <strong>Leads Management (CRM)</strong> for tracking sales funnels, 
+                    2. <strong>Salon Management System</strong> for appointment scheduling, and 
+                    3. <strong>Deed Registration</strong> for handling legal documentation workflows.
+                </div>
             </div>
 
             <div class="project-item">
                 <div class="project-title-line">
-                    <span class="project-name">Student Management System</span> – <span class="project-tech">Laravel,
-                        AJAX, MySQL</span>
+                    <span class="project-name">Multi-Vendor E-Commerce Platform</span> – <span class="project-tech">Core PHP, MySQL, AJAX, JavaScript</span>
                 </div>
                 <div class="project-description">
-                    A comprehensive student information system with dynamic attendance tracking using AJAX for real-time
-                    updates. Features include grade management, reporting, and responsive UI optimized for large
-                    datasets.
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-title-line">
-                    <span class="project-name">E-Commerce Website</span> – <span class="project-tech">PHP, AJAX,
-                        JavaScript, Bootstrap</span>
-                </div>
-                <div class="project-description">
-                    An online shopping platform with modern animations, product catalog management, shopping cart, and
-                    admin dashboard. Features real-time product visualization and smooth user interactions.
+                    Built a complex marketplace ecosystem from scratch using <strong>Core PHP</strong> with <strong>Role-Based Access Control (RBAC)</strong>. Engineered 4 distinct modules: <strong>Admin</strong> (Management), <strong>Vendor</strong> (Sales), <strong>User</strong> (Shopping), and <strong>Delivery Person</strong> (Logistics), ensuring secure session handling and seamless order fulfillment logic.
                 </div>
             </div>
         </section>
@@ -643,7 +666,7 @@
                 </div>
             </div>
 
-            <div class="education-item">
+            <!-- <div class="education-item">
                 <div class="education-header">
                     <div>
                         <div class="degree">GCE Ordinary Level</div>
@@ -651,7 +674,7 @@
                     </div>
                     <div class="date">Completed: 2021</div>
                 </div>
-            </div>
+            </div> -->
         </section>
     </div>
 
