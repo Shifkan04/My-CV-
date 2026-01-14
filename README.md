@@ -4,7 +4,7 @@ This repository contains the source code for my professional CV/Resume, built us
 ### 🌐 Live Demo
 [Click here to view my CV Online](https://shifkan04.github.io/My-CV-/)
 
-![CV Preview](cv-preview.png)
+![CV Preview](cv-preview.jpg)
 
 ## 🚀 Features
 - **Print Friendly:** optimized for saving as PDF.
