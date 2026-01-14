@@ -91,7 +91,7 @@
 
 
         .header-content h4 {
-            margin-bottom: 8px;
+            margin-bottom: 0;
         }
 
         .header-content h1 {
@@ -108,6 +108,29 @@
             color: #111827;
             margin-bottom: 8px;
             letter-spacing: -0.5px;
+        }
+
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .job-title {
+            display: inline-block; 
+            margin-right: 8px;
+        }
+
+        /* .job-title::after {
+            content: '|';
+            margin-left: 8px;
+        } */
+
+        .status {
+            font-size: 14px;
+            color: #2563eb;
+            font-weight: 500;
         }
 
         .contact-info {
@@ -267,6 +290,17 @@
             color: #4b5563;
         }
 
+       a, a:visited, a:hover, a:active {
+            color: #2563eb !important;    
+            text-decoration: none !important;
+            font-weight: 500;
+        }
+
+        .project-name a, .project-name a:visited {
+            color: inherit !important;     
+            text-decoration: none !important;
+        }
+
         @media (max-width: 768px) {
             .resume {
                 padding: 30px 20px;
@@ -354,7 +388,7 @@
             }
 
             .header-content h4 {
-                margin-bottom: 4px !important;
+                margin-bottom: 0 !important;
             }
 
             .header-content h1 {
@@ -371,6 +405,27 @@
                 font-weight: 700 !important;
                 color: #111827 !important;
                 letter-spacing: -0.5px;
+            }
+
+            .title-wrapper {
+                display: flex !important;
+                flex-direction: row !important;
+            }
+
+            .job-title {
+                display: inline-block; 
+                margin-right: 8px;
+            }
+
+            /* .job-title::after {
+                content: '|';
+                margin-left: 8px;
+            } */
+
+            .status {
+                font-size: 14px;
+                color: #2563eb;
+                font-weight: 500;
             }
 
             .contact-info {
@@ -512,6 +567,17 @@
                 color: #4b5563;
                 line-height: 1.5;
             }
+
+            a, a:visited, a:hover, a:active {
+                color: #2563eb !important;    
+                text-decoration: none !important;
+                font-weight: 500;
+            }
+
+            .project-name a, .project-name a:visited {
+                color: inherit !important;     
+                text-decoration: none !important;
+            }
         }
     </style>
 </head>
@@ -526,10 +592,15 @@
             <img src="cv.png" alt="Profile Photo" class="profile-photo">
             <div class="header-content">
                 <h1 class="name">Jaroof Deen Shifkan</h1>
-                <h4>Full Stack Web Developer</h4>
+                <div class="title-wrapper">
+                    <h4 class="job-title">Full Stack Web Developer</h4>
+                    <span class="status">
+                        <i class="fa-solid fa-plane-departure"></i> (Open to Relocate / Remote)
+                    </span>
+                </div>
                 <div class="contact-info">
                     <div class="contact-item">
-                        | <i class="fa-solid fa-location-dot"></i> Puttalam, Sri Lanka
+                        <i class="fa-solid fa-location-dot"></i> Puttalam, Sri Lanka
                     </div>&nbsp;
                     <div class="contact-item">
                         | <i class="fa-solid fa-phone"></i> <a href="tel:+94755638086">+94 75 563 8086</a>
@@ -539,7 +610,7 @@
                             href="mailto:shifkanm04@gmail.com">shifkanm04@gmail.com</a>
                     </div>
                     <div class="contact-item">
-                        | <i class="fa-brands fa-github"></i> <a href="https://github.com/shifkan04"
+                         <i class="fa-brands fa-github"></i> <a href="https://github.com/shifkan04"
                             target="_blank">github.com/shifkan04</a>
                     </div>
                     <div class="contact-item">
@@ -614,7 +685,7 @@
             <div class="experience-item">
                 <div class="experience-header">
                     <div class="job-title">Freelance Full Stack Developer</div>
-                    <div class="date">2026 – Present</div>
+                    <div class="date">Jan 2026 – Present</div>
                 </div>
                 <div class="company">Self-Employed</div>
                 <ul class="description-list">
@@ -639,40 +710,47 @@
                 </div>
                 <div class="project-description">
                     Collaborated within a team to develop this e-commerce platform, specifically focusing on the <strong>checkout module and dynamic GST tax calculations</strong> using AJAX. Managed version control via <strong>Git</strong> for seamless code integration and optimized backend queries for faster performance.
-                    <br>
-                    <strong>Live:</strong> <a href="https://khetkart.com" target="_blank">khetkart.com</a>
+                    <span style="margin-left: 10px;">
+                    <strong>Live:</strong> <a href="https://khetkart.com" target="_blank">Khetkart.com</a>
+                    </span>
                 </div>
             </div>
 
-            <!-- <div class="project-item">
-                <div class="project-title-line">
-                    <span class="project-name">Waste Garbage Collection System</span> – <span
-                        class="project-tech">Laravel, MySQL, Bulma</span>
-                </div>
-                <div class="project-description">
-                    A full-stack waste collection tracking system with JWT authentication and full CRUD functionality.
-                    Developed using Laravel and MySQL, with separate dashboards for admin, collectors, and users.
-                </div>
-            </div> -->
-
            <div class="project-item">
                 <div class="project-title-line">
-                    <span class="project-name">Enterprise Resource Planning (ERP) System</span> – <span class="project-tech">Codeigniter, MySQL, AJAX, jQuery</span>
+                    <span class="project-name">
+                        <a href="https://github.com/thillaiyadiking/leads-management-system" target="_blank" style="text-decoration: none; color: inherit;">
+                            <strong>Multi-Module ERP System</strong> 🔗
+                        </a>
+                    </span> – 
+                    <span class="project-tech">CodeIgniter, MySQL, AJAX, jQuery</span>
                 </div>
                 <div class="project-description">
                     Collaborated in a team to develop a scalable ERP solution. <strong>Solely responsible for end-to-end development of three critical modules:</strong> 
                     1. <strong>Leads Management (CRM)</strong> for tracking sales funnels, 
                     2. <strong>Salon Management System</strong> for appointment scheduling, and 
                     3. <strong>Deed Registration</strong> for handling legal documentation workflows.
-                </div>
+                    
+                <span style="margin-left: 10px;">
+                    <strong>Code:</strong> <a href="https://github.com/thillaiyadiking/leads-management-system" target="_blank">GitHub Link</a>
+                </span>             
+               </div>
             </div>
 
             <div class="project-item">
                 <div class="project-title-line">
-                    <span class="project-name">Multi-Vendor E-Commerce Platform</span> – <span class="project-tech">Core PHP, MySQL, AJAX, JavaScript</span>
+                    <span class="project-name">
+                        <a href="https://github.com/Shifkan04/FutureMart-E-commerce-website" target="_blank" style="text-decoration: none; color: inherit;">
+                            <strong>Multi-Vendor E-Commerce Platform</strong> 🔗
+                        </a>
+                    </span> – 
+                    <span class="project-tech">Core PHP, MySQL, AJAX, JavaScript</span>
                 </div>
                 <div class="project-description">
                     Built a complex marketplace ecosystem from scratch using <strong>Core PHP</strong> with <strong>Role-Based Access Control (RBAC)</strong>. Engineered 4 distinct modules: <strong>Admin</strong> (Management), <strong>Vendor</strong> (Sales), <strong>User</strong> (Shopping), and <strong>Delivery Person</strong> (Logistics), ensuring secure session handling and seamless order fulfillment logic.
+                    <span style="margin-left: 10px;">
+                    <strong>Code:</strong> <a href="https://github.com/Shifkan04/FutureMart-E-commerce-website" target="_blank">GitHub Link</a>
+                        </span>
                 </div>
             </div>
         </section>
