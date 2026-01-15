@@ -281,36 +281,88 @@
 
         @media (max-width: 768px) {
             .resume {
-                padding: 30px 20px;
+                padding: 25px 20px; 
             }
 
             .header {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+                text-align: center; 
                 gap: 15px;
             }
 
+            .header-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
             .profile-photo {
-                width: 90px;
-                height: 90px;
+                width: 100px; 
+                height: 100px;
+                margin-bottom: 5px;
+                border-width: 2px;
             }
 
             .name {
-                font-size: 24px;
+                font-size: 26px;
+                margin-bottom: 5px !important;
+            }
+
+            .title-wrapper {
+                flex-direction: column !important;
+                gap: 5px;
+                margin-bottom: 10px;
             }
 
             .contact-info {
-                gap: 4px;
+                justify-content: center;
+                gap: 8px 12px;
             }
 
             .skills-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; 
+                gap: 15px;
+            }
+
+            .skill-category {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .skill-label {
+                color: #2563eb; 
+                font-size: 13px;
+                margin-bottom: 2px;
             }
 
             .experience-header,
             .education-header {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 2px;
+                margin-bottom: 4px;
+            }
+
+            .date {
+                text-align: left !important;
+                font-size: 11px;
+                color: #6b7280;
+                margin-top: 2px;
+            }
+            
+            .job-title, .degree {
+                font-size: 14px; 
+            }
+
+            .description-list {
+                padding-left: 16px; 
+            }
+            
+            .description-list li {
+                margin-bottom: 5px;
             }
         }
 
