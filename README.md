@@ -6,7 +6,7 @@ This repository contains the source code for my professional CV/Resume, built us
 [Click here to view my CV Online](https://shifkan04.github.io/My-CV-/)
 
 ### 📸 CV Previews
-| **With Photo** | **Without Photo** |
+| **Without Photo** | **With Photo** |
 |:---:|:---:|
 | <img src="cv-preview-no-image.jpg" alt="CV Without Photo" width="400"/> | <img src="cv-preview-with-image.jpg" alt="CV With Photo" width="400"/> |
 
