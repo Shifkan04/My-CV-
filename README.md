@@ -8,7 +8,7 @@ This repository contains the source code for my professional CV/Resume, built us
 ### 📸 CV Previews
 | **With Photo** | **Without Photo** |
 |:---:|:---:|
-| <img src="cv-preview-no-image.jpg" alt="CV With Photo" width="400"/> | <img src="cv-preview-with-image.jpg" alt="CV Without Photo" width="400"/> |
+| <img src="cv-preview-no-image.jpg" alt="CV Without Photo" width="400"/> | <img src="cv-preview-with-image.jpg" alt="CV With Photo" width="400"/> |
 
 ## 🚀 Features
 - **Print Friendly:** optimized for saving as PDF.
