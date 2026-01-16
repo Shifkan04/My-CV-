@@ -29,10 +29,17 @@
             print-color-adjust: exact;
         }
 
-        .download-btn {
+        /* Controls */
+        .controls {
             position: fixed;
             top: 20px;
             right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .btn {
             background: #2563eb;
             color: white;
             border: none;
@@ -46,92 +53,107 @@
             align-items: center;
             gap: 8px;
             transition: all 0.3s ease;
-            z-index: 1000;
         }
 
-        .download-btn:hover {
-            background: #1d4ed8;
+        .toggle-btn {
+            background: #111827;
+        }
+
+        .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
         }
 
-        .download-btn:active {
-            transform: translateY(0);
-        }
-
+        /* Resume Container */
         .resume {
             max-width: 850px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 45px 55px;
+            padding: 40px 50px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-       .header {
+        /* =========================================
+           HEADER STYLES (Default: With Image -> LEFT ALIGNED)
+           ========================================= */
+        .header {
             display: flex;
-            flex-direction: column; /* stack items vertically */
-            align-items: center;    /* center horizontally */
-            text-align: center;     /* center text inside */
-            gap: 15px;
+            align-items: center;
+            gap: 25px;
             margin-bottom: 18px;
             padding-bottom: 18px;
             border-bottom: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .profile-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid #e5e7eb;
+            flex-shrink: 0;
         }
 
         .header-content {
             flex: 1;
+            text-align: left;
         }
 
         .header-content h1 {
             font-size: 32px;
             font-weight: 700;
             color: #111827;
-            margin-bottom: -8px;
+            margin-bottom: -5px;
             letter-spacing: -0.5px;
         }
 
-        .header-content h4 {
-            margin-bottom: 8px;
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            /* Left align */
+            gap: 10px;
+            margin-bottom: 6px;
+            flex-wrap: nowrap;
+            /* Prevent wrapping in browser */
         }
 
         .job-title {
-            display: inline-block; 
-            margin-right: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            white-space: nowrap;
         }
-
-        /* .job-title::after {
-            content: '|';
-            margin-left: 8px;
-        } */
 
         .status {
-            font-size: 14px;
+            font-size: 13px;
             color: #2563eb;
             font-weight: 500;
+            white-space: nowrap;
         }
 
+        /* --- CONTACT INFO (OPTIMIZED) --- */
         .contact-info {
             display: flex;
-            justify-content: center; /* center contact items */
             flex-wrap: wrap;
-            gap: 5px 15px;
-            font-size: 11px;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 6px 12px;
+            font-size: 12px;
             color: #4b5563;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
+            white-space: nowrap;
         }
 
         .contact-item a {
             color: #2563eb;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
+            text-decoration: none !important;
         }
 
         .section {
@@ -268,26 +290,60 @@
             color: #4b5563;
         }
 
-        a, a:visited, a:hover, a:active {
-            color: #2563eb !important;    
+        a,
+        a:visited,
+        a:hover,
+        a:active {
+            color: #2563eb !important;
             text-decoration: none !important;
             font-weight: 500;
         }
 
-        .project-name a, .project-name a:visited {
-            color: inherit !important;     
+        .project-name a,
+        .project-name a:visited {
+            color: inherit !important;
             text-decoration: none !important;
         }
 
+        body.no-image .profile-photo {
+            display: none !important;
+        }
+
+        /* Center everything in Header when no image */
+        body.no-image .header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        body.no-image .header-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        body.no-image .title-wrapper {
+            justify-content: center;
+        }
+
+        body.no-image .contact-info {
+            display: flex !important;
+            justify-content: center !important;
+            flex-wrap: wrap !important;
+            gap: 5px 15px !important;
+            font-size: 11px !important;
+            color: #4b5563 !important;
+        }
+
+
         @media (max-width: 768px) {
             .resume {
-                padding: 25px 20px; 
+                padding: 25px 20px;
             }
 
             .header {
                 flex-direction: column;
                 align-items: center;
-                text-align: center; 
+                text-align: center;
                 gap: 15px;
             }
 
@@ -299,7 +355,7 @@
             }
 
             .profile-photo {
-                width: 100px; 
+                width: 100px;
                 height: 100px;
                 margin-bottom: 5px;
                 border-width: 2px;
@@ -322,7 +378,7 @@
             }
 
             .skills-grid {
-                grid-template-columns: 1fr; 
+                grid-template-columns: 1fr;
                 gap: 15px;
             }
 
@@ -333,7 +389,7 @@
             }
 
             .skill-label {
-                color: #2563eb; 
+                color: #2563eb;
                 font-size: 13px;
                 margin-bottom: 2px;
             }
@@ -352,15 +408,16 @@
                 color: #6b7280;
                 margin-top: 2px;
             }
-            
-            .job-title, .degree {
-                font-size: 14px; 
+
+            .job-title,
+            .degree {
+                font-size: 14px;
             }
 
             .description-list {
-                padding-left: 16px; 
+                padding-left: 16px;
             }
-            
+
             .description-list li {
                 margin-bottom: 5px;
             }
@@ -378,6 +435,10 @@
                 margin: 0;
             }
 
+            .controls {
+                display: none !important;
+            }
+
             .resume {
                 box-shadow: none;
                 padding: 0 !important;
@@ -385,61 +446,97 @@
                 margin: 0;
             }
 
-            .download-btn {
-                display: none !important;
+            /* --- ALIGNMENT LOGIC FOR PDF --- */
+
+            /* 1. Default (With Image): Force LEFT alignment */
+            .header {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 20px !important;
+                text-align: left !important;
             }
 
-            .header {
-                display: flex;
-                flex-direction: column; /* stack items vertically */
-                align-items: center;    /* center horizontally */
-                text-align: center;     /* center text inside */
-                gap: 15px;
-                margin-bottom: 5px;
-                padding-bottom: 5px;
-                border-bottom: 2px solid #e5e7eb;
+            .profile-photo {
+                display: block;
+                margin-right: 0 !important;
             }
 
             .header-content {
+                text-align: left !important;
                 flex: 1;
             }
 
             .header-content h1 {
-                font-size: 30px;
-                font-weight: 650;
-                color: #111827;
-                margin-bottom: -8px;
-                letter-spacing: -0.5px;
+                font-size: 32px !important;
+                font-weight: 700 !important;
+                color: #111827 !important;
+                margin-bottom: -5px !important;
+                letter-spacing: -0.5px !important;
+                align-items: left !important;
+                justify-content: flex-start !important;
             }
 
-            .header-content h4 {
-                margin-bottom: 8px;
+            .title-wrapper {
+                display: flex !important;
+                flex-direction: row !important;
+                white-space: nowrap !important;
+                flex-wrap: nowrap !important;
             }
 
             .contact-info {
-                display: flex;
-                justify-content: center; /* center contact items */
-                flex-wrap: wrap;
-                gap: 4px 4px;
-                font-size: 11px;
-                color: #4b5563;
+                justify-content: flex-start !important;
+                gap: 5px 5px !important;
+                margin-bottom: -5 !important;
             }
 
-            .contact-item {
-                display: flex;
-                align-items: center;
-                gap: 5px;
+            body.no-image .profile-photo {
+                display: none !important;
             }
 
-            .contact-item a {
-                color: #2563eb;
-                text-decoration: none;
+            body.no-image .header {
+                display: flex !important;
+                flex-direction: column !important; /* stack items vertically */
+                align-items: center !important;    /* center horizontally */
+                text-align: center !important;     /* center text inside */
+                gap: 15px !important;
+                margin-bottom: 5px !important;
+                padding-bottom: 5px !important;
+                border-bottom: 2px solid #e5e7eb !important;
             }
 
-            .contact-item a:hover {
-                text-decoration: underline;
+            body.no-image .header-content {
+                text-align: center !important;
+                flex: 1 !important;
             }
 
+            body.no-image .header-content h1 {
+                font-size: 30px !important;
+                font-weight: 650 !important;
+                color: #111827 !important;
+                margin-bottom: -8px !important;
+                margin-top: -8px !important;
+                letter-spacing: -0.5px !important;
+            }
+
+            body.no-image .title-wrapper {
+                justify-content: center !important;
+                margin-bottom: 3px !important;
+            }
+
+            body.no-image .contact-info {
+                display: flex !important;
+                justify-content: center !important; 
+                flex-wrap: wrap !important;
+                gap: 4px 4px !important;
+                font-size: 11px !important;
+                color: #4b5563 !important;
+            }
+
+            body.no-image .contact-item {
+                display: flex !important;
+                align-items: center !important;
+                gap: 5px !important;
+            }
 
             .section {
                 margin-bottom: 3px;
@@ -490,15 +587,15 @@
             .experience-item,
             .project-item,
             .education-item {
-                margin-bottom: 7px;
+                margin-bottom: 5px;
                 page-break-inside: avoid;
             }
 
             .experience-header,
             .education-header {
                 display: flex !important;
-                flex-direction: row !important; 
-                justify-content: space-between !important; 
+                flex-direction: row !important;
+                justify-content: space-between !important;
                 align-items: flex-start !important;
                 width: 100%;
             }
@@ -534,7 +631,7 @@
             }
 
             .description-list li {
-                margin-bottom: 1px;
+                margin-bottom: 0;
             }
 
             .project-title-line {
@@ -558,14 +655,18 @@
                 line-height: 1.5;
             }
 
-            a, a:visited, a:hover, a:active {
-                color: #2563eb !important;    
+            a,
+            a:visited,
+            a:hover,
+            a:active {
+                color: #2563eb !important;
                 text-decoration: none !important;
                 font-weight: 400;
             }
 
-            .project-name a, .project-name a:visited {
-                color: inherit !important;     
+            .project-name a,
+            .project-name a:visited {
+                color: inherit !important;
                 text-decoration: none !important;
             }
         }
@@ -573,18 +674,26 @@
 </head>
 
 <body>
-    <button class="download-btn" onclick="downloadPDF()">
-        📄 Download PDF
-    </button>
+    <div class="controls">
+        <button class="btn toggle-btn" onclick="toggleImage()">
+            <i class="fa-regular fa-image"></i> Toggle Image
+        </button>
+        <button class="btn" onclick="downloadPDF()">
+            <i class="fa-solid fa-file-pdf"></i> Download PDF
+        </button>
+    </div>
 
     <div class="resume">
         <header class="header">
+            <img src="profile.png" alt="Profile Photo" class="profile-photo" onerror="this.style.display='none'">
             <div class="header-content">
                 <h1 class="name">Jaroof Deen Shifkan</h1>
-                <h4 class="job-title">Full Stack Web Developer</h4>
+                <div class="title-wrapper">
+                    <h4 class="job-title">Full Stack Web Developer</h4>
                     <span class="status">
-                        <!-- <i class="fa-solid fa-plane-departure"></i> (Open to Relocate / Remote) -->
+                        <i class="fa-solid fa-plane-departure"></i> (Open to Relocate / Remote)
                     </span>
+                </div>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fa-solid fa-location-dot"></i> Puttalam, Sri Lanka
@@ -601,7 +710,8 @@
                             target="_blank">github.com/shifkan04</a>
                     </div>
                     <div class="contact-item">
-                        | <i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/shifkan/" target="_blank">linkedin.com/in/shifkan</a>
+                        | <i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/shifkan/"
+                            target="_blank">linkedin.com/in/shifkan</a>
                     </div>
                 </div>
             </div>
@@ -610,7 +720,8 @@
         <section class="section">
             <h2 class="section-title">About Me</h2>
             <p class="about-text">
-                Passionate Full Stack Web Developer with expertise in Laravel, PHP, Next.js and modern JavaScript frameworks.
+                Passionate Full Stack Web Developer with expertise in Laravel, PHP, Next.js and modern JavaScript
+                frameworks.
                 Specialized in building scalable, user-focused web applications with clean architecture and intuitive
                 interfaces.
                 Proven track record in developing complete CRUD systems, implementing real-time features using AJAX, and
@@ -638,7 +749,8 @@
                 </div>
                 <div class="skill-category">
                     <div class="skill-label">Tools:</div>
-                    <div class="skill-items">Git, GitHub, Composer, VS Code, Postman, Laragon, xampp, MySQL Workbench, phpMyAdmin</div>
+                    <div class="skill-items">Git, GitHub, Composer, VS Code, Postman, Laragon, xampp, MySQL Workbench,
+                        phpMyAdmin</div>
                 </div>
             </div>
             <div class="skills-grid">
@@ -660,7 +772,8 @@
                 </div>
                 <div class="company">VITS Campus</div>
                 <ul class="description-list">
-                    <li>Developed responsive web applications using Next.js, Laravel, PHP, HTML, CSS, and Bootstrap, enhancing
+                    <li>Developed responsive web applications using Next.js, Laravel, PHP, HTML, CSS, and Bootstrap,
+                        enhancing
                         user engagement.</li>
                     <li>Built and optimized RESTful APIs with Laravel and MySQL, improving performance and efficiency.
                     </li>
@@ -676,7 +789,8 @@
                 </div>
                 <div class="company">Self-Employed</div>
                 <ul class="description-list">
-                    <li>Designed and deployed full-stack web apps using Next.js, Laravel, Codeigniter, PHP, JavaScript, and MySQL.</li>
+                    <li>Designed and deployed full-stack web apps using Next.js, Laravel, Codeigniter, PHP, JavaScript,
+                        and MySQL.</li>
                     <li>Integrated secure authentication and data handling to ensure smooth functionality.</li>
                     <li>Created custom solutions and delivered projects on time with 100% client satisfaction.</li>
                 </ul>
@@ -686,59 +800,69 @@
         <section class="section">
             <h2 class="section-title">Projects</h2>
 
-           <div class="project-item">
+            <div class="project-item">
                 <div class="project-title-line">
                     <span class="project-name">
                         <a href="https://khetkart.com" target="_blank" style="text-decoration: none; color: inherit;">
                             <strong>Khetkart (E-Commerce Platform)</strong> 🔗
                         </a>
-                    </span> – 
+                    </span> –
                     <span class="project-tech">Laravel, AJAX, MySQL, Git</span>
                 </div>
                 <div class="project-description">
-                    Collaborated within a team to develop this e-commerce platform, specifically focusing on the <strong>checkout module and dynamic GST tax calculations</strong> using AJAX. Managed version control via <strong>Git</strong> for seamless code integration and optimized backend queries for faster performance.
+                    Collaborated within a team to develop this e-commerce platform, specifically focusing on the
+                    <strong>checkout module and dynamic GST tax calculations</strong> using AJAX. Managed version
+                    control via <strong>Git</strong> for seamless code integration and optimized backend queries for
+                    faster performance.
                     <span style="margin-left: 10px;">
-                    <strong>Live:</strong> <a href="https://khetkart.com" target="_blank">Khetkart.com</a>
+                        <strong>Live:</strong> <a href="https://khetkart.com" target="_blank">Khetkart.com</a>
                     </span>
                 </div>
-            </div>
-
-           <div class="project-item">
-                <div class="project-title-line">
-                    <span class="project-name">
-                        <!-- <a href="https://github.com/thillaiyadiking/leads-management-system" target="_blank" style="text-decoration: none; color: inherit;"> -->
-                            <strong>Multi-Module ERP System</strong> 🔗
-                        <!-- </a> -->
-                    </span> – 
-                    <span class="project-tech">CodeIgniter, MySQL, AJAX, jQuery</span>
-                </div>
-                <div class="project-description">
-                    Collaborated in a team to develop a scalable ERP solution. <strong>Solely responsible for end-to-end development of three critical modules:</strong> 
-                    1. <strong>Leads Management (CRM)</strong> for tracking sales funnels, 
-                    2. <strong>Salon Management System</strong> for appointment scheduling, and 
-                    3. <strong>Deed Registration</strong> for handling legal documentation workflows.
-                    
-                <span style="margin-left: 10px;">
-                    <strong>Source Code: Private</strong>
-                    <!-- <strong>Code:</strong> <a href="https://github.com/thillaiyadiking/leads-management-system" target="_blank">GitHub Link</a> -->
-                </span>             
-               </div>
             </div>
 
             <div class="project-item">
                 <div class="project-title-line">
                     <span class="project-name">
-                        <a href="https://github.com/Shifkan04/FutureMart-E-commerce-website" target="_blank" style="text-decoration: none; color: inherit;">
+                        <!-- <a href="https://github.com/thillaiyadiking/leads-management-system" target="_blank" style="text-decoration: none; color: inherit;"> -->
+                        <strong>Multi-Module ERP System</strong> 
+                        <!-- </a> -->
+                    </span> –
+                    <span class="project-tech">CodeIgniter, MySQL, AJAX, jQuery</span>
+                </div>
+                <div class="project-description">
+                    Collaborated in a team to develop a scalable ERP solution. <strong>Solely responsible for end-to-end
+                        development of three critical modules:</strong>
+                    1. <strong>Leads Management (CRM)</strong> for tracking sales funnels,
+                    2. <strong>Salon Management System</strong> for appointment scheduling, and
+                    3. <strong>Deed Registration</strong> for handling legal documentation workflows.
+
+                    <span style="margin-left: 10px;">
+                        <strong>Source Code: Private</strong>
+                        <!-- <strong>Code:</strong> <a href="https://github.com/thillaiyadiking/leads-management-system" target="_blank">GitHub Link</a> -->
+                    </span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title-line">
+                    <span class="project-name">
+                        <a href="https://github.com/Shifkan04/FutureMart-E-commerce-website" target="_blank"
+                            style="text-decoration: none; color: inherit;">
                             <strong>Multi-Vendor E-Commerce Platform</strong> 🔗
                         </a>
-                    </span> – 
+                    </span> –
                     <span class="project-tech">Core PHP, MySQL, AJAX, JavaScript</span>
                 </div>
                 <div class="project-description">
-                    Built a complex marketplace ecosystem from scratch using <strong>Core PHP</strong> with <strong>Role-Based Access Control (RBAC)</strong>. Engineered 4 distinct modules: <strong>Admin</strong> (Management), <strong>Vendor</strong> (Sales), <strong>User</strong> (Shopping), and <strong>Delivery Person</strong> (Logistics), ensuring secure session handling and seamless order fulfillment logic.
+                    Built a complex marketplace ecosystem from scratch using <strong>Core PHP</strong> with
+                    <strong>Role-Based Access Control (RBAC)</strong>. Engineered 4 distinct modules:
+                    <strong>Admin</strong> (Management), <strong>Vendor</strong> (Sales), <strong>User</strong>
+                    (Shopping), and <strong>Delivery Person</strong> (Logistics), ensuring secure session handling and
+                    seamless order fulfillment logic.
                     <span style="margin-left: 10px;">
-                    <strong>Code:</strong> <a href="https://github.com/Shifkan04/FutureMart-E-commerce-website" target="_blank">GitHub Link</a>
-                        </span>
+                        <strong>Code:</strong> <a href="https://github.com/Shifkan04/FutureMart-E-commerce-website"
+                            target="_blank">GitHub Link</a>
+                    </span>
                 </div>
             </div>
         </section>
@@ -769,14 +893,12 @@
     </div>
 
     <script>
+        function toggleImage() {
+            document.body.classList.toggle('no-image');
+        }
+
         function downloadPDF() {
-            const btn = document.querySelector('.download-btn');
-            const originalDisplay = btn.style.display;
-            btn.style.display = 'none';
             window.print();
-            setTimeout(() => {
-                btn.style.display = originalDisplay;
-            }, 100);
         }
     </script>
 </body>
