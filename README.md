@@ -1,10 +1,14 @@
 # 📄 Professional Full Stack Developer CV
 
 This repository contains the source code for my professional CV/Resume, built using pure **HTML & CSS**. It is designed to be clean, responsive, and print-friendly (A4 size).
+
 ### 🌐 Live Demo
 [Click here to view my CV Online](https://shifkan04.github.io/My-CV-/)
 
-![CV Preview](cv-preview.jpg)
+### 📸 CV Previews
+| **With Photo** | **Without Photo** |
+|:---:|:---:|
+| <img src="cv-preview-no-image.jpg" alt="CV With Photo" width="400"/> | <img src="cv-preview-with-image.jpg" alt="CV Without Photo" width="400"/> |
 
 ## 🚀 Features
 - **Print Friendly:** optimized for saving as PDF.
