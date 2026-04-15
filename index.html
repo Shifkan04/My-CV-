@@ -803,7 +803,9 @@
                         <span class="job-title">Freelance Full Stack Developer</span>
                         <span class="company"> – Self-Employed</span>
                     </div>
-                    <div class="date">April 2026 – Present</div>
+                    <div class="date">
+                        <span id="current-date"></span> – Present
+                    </div>
                 </div>
 
                 <ul class="description-list">
@@ -917,6 +919,18 @@
         function downloadPDF() {
             window.print();
         }
+    
+        const now = new Date();
+
+        const months = [
+            "Jan", "Feb", "March", "April", "May", "June",
+            "July", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ];
+
+        const currentMonth = months[now.getMonth()];
+        const currentYear = now.getFullYear();
+
+        document.getElementById("current-date").textContent = currentMonth + " " + currentYear;
     </script>
 </body>
 
